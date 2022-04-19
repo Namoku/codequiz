@@ -15,7 +15,6 @@ function Header() {
   return (
     <div className="container">
       <h1>CodeQuiz</h1>
-      <p>by Namoku</p>
       <div className="navContainer">
         <LinkButton to="/" value="Home" />
         <LinkButton to="/play" value="Play" />

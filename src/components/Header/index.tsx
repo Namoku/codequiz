@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 
 function LinkButton({ to, value }: { to: string; value: string }) {
   return (
-    <Link to={to}>
-      <button className="linkButton" type="button">
-        {value}
-      </button>
-    </Link>
+    <li>
+      <Link to={to}>
+        <button className="linkButton" type="button">
+          {value}
+        </button>
+      </Link>
+    </li>
   );
 }
 
@@ -15,12 +17,12 @@ function Header() {
   return (
     <div className="container">
       <h1>CodeQuiz</h1>
-      <div className="navContainer">
+      <ul className="navContainer">
         <LinkButton to="/" value="Home" />
         <LinkButton to="/play" value="Play" />
         <LinkButton to="/login" value="Login" />
         <LinkButton to="/register" value="Register" />
-      </div>
+      </ul>
     </div>
   );
 }

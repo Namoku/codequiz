@@ -1,5 +1,6 @@
 import './style.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function LinkButton({ to, value }: { to: string; value: string }) {
   return (
@@ -12,10 +13,17 @@ function LinkButton({ to, value }: { to: string; value: string }) {
 }
 
 function Header() {
+  const [isShowMenu, setShowMenu] = useState(false);
+  const handleClick = () => {
+    setShowMenu(!isShowMenu);
+  };
   return (
     <div className="container">
-      <h1>CodeQuiz</h1>
-      <article className="navContainer">
+      <section className="header">
+        <h1>CodeQuiz</h1>
+        <button type="button" onClick={handleClick}>-</button>
+      </section>
+      <article className={`navContainer ${isShowMenu ? '' : 'hidden'}`}>
         <LinkButton to="/" value="Home" />
         <LinkButton to="/play" value="Play" />
         <LinkButton to="/login" value="Login" />

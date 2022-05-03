@@ -12,6 +12,10 @@ h1 {
   height: 6vh;
 }
 
+.container .header button {
+  display: none;
+}
+
 .navContainer {
   display: flex;
   flex-wrap: wrap;
@@ -31,6 +35,19 @@ h1 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    min-width: 340px;
+    position: sticky;
+  }
+  .container .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .container .header button {
+    width: 32px;
+    height: 32px;
+    display: inline;
   }
   .navContainer {
     flex-direction: column;
@@ -39,6 +56,10 @@ h1 {
     align-items: center;
     align-content: space-around;
     height: 12rem;
+    width: 100%;
+  }
+  .hidden {
+    display: none;
   }
 }
 

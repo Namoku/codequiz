@@ -9,7 +9,6 @@ h1 {
 .container {
   display: flex;
   align-items: center;
-  height: 6vh;
 }
 
 .container .header button {
@@ -62,4 +61,3 @@ h1 {
     display: none;
   }
 }
-

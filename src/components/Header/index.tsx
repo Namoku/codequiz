@@ -1,11 +1,11 @@
-import './style.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import styles from './style.module.css';
 
 function LinkButton({ to, value }: { to: string; value: string }) {
   return (
     <Link to={to}>
-      <button className="linkButton" type="button">
+      <button className={styles.linkButton} type="button">
         {value}
       </button>
     </Link>
@@ -13,17 +13,19 @@ function LinkButton({ to, value }: { to: string; value: string }) {
 }
 
 function Header() {
-  const [isShowMenu, setShowMenu] = useState(false);
+  const [isShowMenu, setShowMenu] = useState<Boolean>(false);
   const handleClick = () => {
     setShowMenu(!isShowMenu);
   };
   return (
-    <div className="container">
-      <section className="header">
+    <div className={styles.container}>
+      <section className={styles.header}>
         <h1>CodeQuiz</h1>
-        <button type="button" onClick={handleClick}>-</button>
+        <button type="button" onClick={handleClick}>
+          -
+        </button>
       </section>
-      <article className={`navContainer ${isShowMenu ? '' : 'hidden'}`}>
+      <article className={`${styles.navContainer} ${isShowMenu ? '' : styles.hidden}`}>
         <LinkButton to="/" value="Home" />
         <LinkButton to="/play" value="Play" />
         <LinkButton to="/login" value="Login" />

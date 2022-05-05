@@ -4,7 +4,7 @@ import styles from './style.module.css';
 
 function LinkButton({ to, value }: { to: string; value: string }) {
   return (
-    <Link to={to}>
+    <Link to={to} className={styles.linkContainer}>
       <button className={styles.linkButton} type="button">
         {value}
       </button>
